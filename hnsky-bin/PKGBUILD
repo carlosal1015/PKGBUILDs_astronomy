@@ -1,0 +1,13 @@
+pkgname="hnsky-bin"
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Semi professional free planetarium program"
+arch=("x86_64")
+url='https://sourceforge.net/projects/hnsky/'
+license=('GPL3')
+source=("https://altushost-swe.dl.sourceforge.net/project/hnsky/linux_installer/${pkgname}_amd64.tar.gz")
+sha256sums=('f4b0eff6fe43fe59bce3c3f33bf0cb03017ec20f7b19e914dc6c920b8877e080')
+
+package() {
+	tar -xf ${pkgname}_amd64.tar.gz "$pkgdir"
+}

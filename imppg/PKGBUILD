@@ -1,0 +1,20 @@
+pkgname="imppg"
+pkgver=0.6.5
+pkgrel=1
+pkgdesc="Image Post-Processor"
+arch=("x86_64")
+url='http://greatattractor.github.io/imppg/'
+license=('GPL3')
+makedepends=()
+source=("https://github.com/GreatAttractor/imppg/archive/refs/tags/v0.6.5.tar.gz")
+sha256sums=('504c62f8d65a819162cba18d2f51325ad28e0bf804782350d851e512a9918afa')
+
+build() {
+    cd imppg-0.6.5
+    cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ./
+    make
+}
+
+package() {
+    cmake -P cmake_install.cmake
+}

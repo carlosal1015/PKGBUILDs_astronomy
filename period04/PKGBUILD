@@ -1,0 +1,16 @@
+pkgname="period04"
+pkgver=1.2.9.3
+pkgrel=1
+pkgdesc="software tool for finding variable objects on a series of astronomical images"
+arch=("x86_64")
+url='http://period04.net/'
+license=('Custom')
+makedepends=()
+source=("http://period04.net/v1293/period04-v${pkgver}-linux-64bit.sh")
+sha256sums=('368153e45497a4c6688eaf99332d586ea45b6612ace89a8853b11bee992b7697')
+
+
+package() {
+    chmod u+x ./period04-v${pkgver}-linux-64bit.sh
+    ./period04-v${pkgver}-linux-64bit.sh
+}

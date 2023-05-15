@@ -1,0 +1,15 @@
+pkgname="virtualplanet-bin"
+pkgver=2.0
+pkgrel=1
+pkgdesc="Allow you to visualize any planet aspect at any time. Include extended feature database and textur"
+arch=("x86_64")
+url='http://www.ap-i.net/avp/en/download'
+license=('GPL2')
+makedepends=()
+source=("https://master.dl.sourceforge.net/project/virtualplanet/2-Linux/2.0/software/tar/virtualplanet-${pkgver}-linux_x86_64.tgz")
+sha256sums=('e53d275d4eb381f877847e6a50c101a6bd5bc9cf51386d3edd831900b33052ca')
+
+
+package() {
+    tar zxvf virtualplanet-${pkgver}-linux_x86_64.tgz
+}

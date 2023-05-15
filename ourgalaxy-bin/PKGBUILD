@@ -1,0 +1,13 @@
+pkgname="ourgalaxy-bin"
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="app that helps you understand the structural components of the Galaxy"
+arch=("x86_64")
+url='https://www.otherwise.com/'
+license=('custom')
+source=("https://otherwise.com/OurGalaxy_Linux.zip")
+sha256sums=('2950167d6bad4b1c841326b8d57f60e195dfba1e2bea31b7e176183daac1d9e1')
+
+package() {
+	unzip OurGalaxy_Linux.zip "$pkgdir"
+}

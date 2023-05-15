@@ -1,0 +1,15 @@
+pkgname="wxastrocapture-bin"
+pkgver=1.8
+pkgrel=1
+pkgdesc="Astronomy Capture"
+arch=("x86_64")
+url='https://arnholm.org/astro/software/wxAstroCapture/index.htm'
+license=('Custom')
+makedepends=()
+source=("https://arnholm.org/astro/software/wxAstroCapture/redist/wxastrocapture-${pkgver}-1-linux-2.6-i386.tar.gz")
+sha256sums=('6d0e885715b79fcc3b0563efe62081fca129bcdde5961ed58237cccdf4462caa')
+
+
+package() {
+    ./wxastrocapture.install
+}

@@ -1,0 +1,14 @@
+pkgname="planetarysystemstacker-git"
+pkgver=0.8.22
+pkgrel=1
+pkgdesc="Produce a sharp image of a planetary system object"
+arch=("x86_64")
+url='https://github.com/Rolf-Hempel/PlanetarySystemStacker'
+license=('GPL3')
+makedepends=()
+sha256sums=('SKIP')
+
+package() {
+    python3 setup.py sdist
+    python3 setup_linux.py bdist_wheel --plat-name linux_armv7l
+}
