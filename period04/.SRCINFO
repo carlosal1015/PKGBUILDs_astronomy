@@ -1,0 +1,11 @@
+pkgbase = period04
+	pkgdesc = software tool for finding variable objects on a series of astronomical images
+	pkgver = 1.2.9.3
+	pkgrel = 1
+	url = http://period04.net
+	arch = x86_64
+	license = custom
+	source = http://period04.net/v1293/period04-v1.2.9.3-linux-64bit.sh
+	sha512sums = 3b6f34f527a235388ad182ca56a8bb188301f1bcafb92eae85bc618eb46a0eb02f48b230d265f8841106cad66310614f4bd580b295ec1baff58372b802a11d52
+
+pkgname = period04

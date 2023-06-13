@@ -1,13 +1,16 @@
-pkgname="ourgalaxy-bin"
-pkgver=1.0.0
+# Maintainer: Yuriy Ivanov <yuriy.ivanov.spb@gmail.com>
+# Contributor: Carlos Aznarán <caznaranl@uni.pe>
+_base=OurGalaxy
+pkgname=${_base,,}-bin
+pkgver=2.1.0
 pkgrel=1
-pkgdesc="app that helps you understand the structural components of the Galaxy"
-arch=("x86_64")
-url='https://www.otherwise.com/'
+pkgdesc="App that helps you understand the structural components of the Galaxy"
+arch=(x86_64)
+url="https://otherwise.com"
 license=('custom')
-source=("https://otherwise.com/OurGalaxy_Linux.zip")
-sha256sums=('2950167d6bad4b1c841326b8d57f60e195dfba1e2bea31b7e176183daac1d9e1')
+source=(${url}/${_base}_Linux.zip)
+sha512sums=('ebbed383221f66be682fcc3a4562c3ee6414e0f21ff02aedb515964943804620f538599be8e0afd234c85914a0c3877a3b0f7ac42c6ab8ead47929a5308bea91')
 
 package() {
-	unzip OurGalaxy_Linux.zip "$pkgdir"
+	unzip ${_base}_Linux.zip "$pkgdir"
 }

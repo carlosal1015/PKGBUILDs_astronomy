@@ -1,0 +1,11 @@
+pkgbase = imppg
+	pkgdesc = Image Post-Processor
+	pkgver = 0.6.5
+	pkgrel = 1
+	url = https://greatattractor.github.io/imppg
+	arch = x86_64
+	license = GPL3
+	source = imppg-0.6.5.tar.gz::https://github.com/GreatAttractor/imppg/archive/v0.6.5.tar.gz
+	sha512sums = bfd1d89632e67cf1c0063e475629429ce82860eb00ee0f4b49c0277f81d332507f9e631187d27a64149da9224a71ede27831b57230b895084be7b066a1f26a30
+
+pkgname = imppg

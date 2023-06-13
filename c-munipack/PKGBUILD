@@ -1,26 +1,21 @@
 # Maintainer: Yuriy Ivanov <yuriy.ivanov.spb@gmail.com>
-pkgname=c-munipack
+# Contributor: Carlos Aznarán <caznaranl@uni.pe>
+_base=C-Munipack
+pkgname=${_base,,}
 pkgver=2.1.35
 pkgrel=1
 pkgdesc="An astrophotometry software package"
 arch=(x86_64)
 url="https://sourceforge.net/projects/${pkgname}"
-license=('GPL2')
-makedepends=('cfitsio' 'gtk2' 'doxygen' 'gtest' 'python-sphinx')
-source=(https://altushost-swe.dl.sourceforge.net/project/${pkgname}/C-Munipack%202.1%20Stable/${pkgver}/C-Munipack-${pkgver}-source.zip)
-sha152sums=('a86244d7aecc31fa2a9f4b15604ce849c18535f0444c88a77e4c8c5779c08031')
-
-prepare() {
-  cd "C-Munipack-${pkgver}-source"
-  # sphinx-build-3 does not exist on Arch Linux,
-  # use sphinx-build instead
-  sed -e 's/sphinx-build-3/sphinx-build/' \
-    -i doc/CMakeLists.txt
-}
+license=(GPL2)
+makedepends=(cfitsio gtk2 doxygen gtest python-sphinx)
+source=(https://altushost-swe.dl.sourceforge.net/project/${pkgname}/${_base}%202.1%20Stable/${pkgver}/${_base}-${pkgver}-source.zip)
+sha512sums=('9012dfd5906694679e1e9d99d04aef6dd97086813f8d7519b7af0e7ef862be32f000e6e79ae65a515228a4224602c8e92216388e754bc1fa05514be15dd30184')
 
 build() {
-  cd "C-Munipack-${pkgver}-source"
-  cmake -S . -B build \
+  cmake \
+    -S ${_base}-${pkgver}-source \
+    -B build \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DENABLE_STATIC=NO \
     -DENABLE_CXX_WRAPPER=YES \
@@ -34,7 +29,6 @@ build() {
 }
 
 package() {
-  cd "$pkgname-$pkgver"
-  make DESTDIR="$pkgdir/" install
+  DESTDIR="${pkgdir}" cmake --build build --target install
+  install -Dm 644 ${_base}-${pkgver}-source/LICENSE.GPL2 -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
-sha256sums=('a86244d7aecc31fa2a9f4b15604ce849c18535f0444c88a77e4c8c5779c08031')

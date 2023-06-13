@@ -1,0 +1,11 @@
+pkgbase = hnsky-bin
+	pkgdesc = Hallo Northern Sky planetarium program
+	pkgver = 0
+	pkgrel = 1
+	url = https://sourceforge.net/projects/hnsky
+	arch = x86_64
+	license = GPL3
+	source = https://altushost-swe.dl.sourceforge.net/project/hnsky/linux_installer/hnsky_amd64.tar.gz
+	sha512sums = a3e40fb1b48e9502a4c4edf434a23bd6056c8ef1a65235d8c5cdfc47bfa7ffb489f19c26f3359e874d582f9a461116d0c05a637487a6b6a0ac49a69709714cb0
+
+pkgname = hnsky-bin

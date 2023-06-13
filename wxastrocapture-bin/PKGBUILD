@@ -1,15 +1,17 @@
-pkgname="wxastrocapture-bin"
+# Maintainer: Yuriy Ivanov <yuriy.ivanov.spb@gmail.com>
+# Contributor: Carlos Aznarán <caznaranl@uni.pe>
+_base=wxAstroCapture
+pkgname=${_base,,}-bin
 pkgver=1.8
 pkgrel=1
 pkgdesc="Astronomy Capture"
-arch=("x86_64")
-url='https://arnholm.org/astro/software/wxAstroCapture/index.htm'
-license=('Custom')
+arch=(x86_64)
+url="https://arnholm.org/astro/software/${_base}/index.htm"
+license=('custom')
 makedepends=()
-source=("https://arnholm.org/astro/software/wxAstroCapture/redist/wxastrocapture-${pkgver}-1-linux-2.6-i386.tar.gz")
-sha256sums=('6d0e885715b79fcc3b0563efe62081fca129bcdde5961ed58237cccdf4462caa')
-
+source=(https://arnholm.org/astro/software/${_base}/redist/${_base,,}-${pkgver}-1-linux-2.6-i386.tar.gz)
+sha512sums=('a15485f071b3d8353e4acfa105e1f83758a95943e74491b6a7ab49174277a5b6e6580a273ce05fdce5441c4f01b9861b111e12ae3ef27d0a028803ac04b1117e')
 
 package() {
-    ./wxastrocapture.install
+  ./${_base,,}.install
 }

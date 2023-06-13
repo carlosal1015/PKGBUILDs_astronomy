@@ -1,20 +1,27 @@
-pkgname="imppg"
+# Maintainer: Yuriy Ivanov <yuriy.ivanov.spb@gmail.com>
+# Contributor: Carlos Aznarán <caznaranl@uni.pe>
+pkgname=imppg
 pkgver=0.6.5
 pkgrel=1
 pkgdesc="Image Post-Processor"
-arch=("x86_64")
-url='http://greatattractor.github.io/imppg/'
-license=('GPL3')
+arch=(x86_64)
+url="https://greatattractor.github.io/${pkgname}"
+license=(GPL3)
 makedepends=()
-source=("https://github.com/GreatAttractor/imppg/archive/refs/tags/v0.6.5.tar.gz")
-sha256sums=('504c62f8d65a819162cba18d2f51325ad28e0bf804782350d851e512a9918afa')
+source=(${pkgname}-${pkgver}.tar.gz::https://github.com/GreatAttractor/${pkgname}/archive/v${pkgver}.tar.gz)
+sha512sums=('bfd1d89632e67cf1c0063e475629429ce82860eb00ee0f4b49c0277f81d332507f9e631187d27a64149da9224a71ede27831b57230b895084be7b066a1f26a30')
 
 build() {
-    cd imppg-0.6.5
-    cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ./
-    make
+  cmake \
+    -S ${pkgname}-${pkgver} \
+    -B build \
+    -G "Unix Makefiles" \
+    -DCMAKE_BUILD_TYPE=Release
+  cmake --build build
 }
 
 package() {
-    cmake -P cmake_install.cmake
+  # cmake -P cmake_install.cmake
+  DESTDIR="${pkgdir}" cmake --build build --target install
+  install -Dm 644 ${pkgname}-${pkgver}/LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }

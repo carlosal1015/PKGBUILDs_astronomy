@@ -1,0 +1,25 @@
+# Maintainer: Yuriy Ivanov <yuriy.ivanov.spb@gmail.com>
+# Contributor: Carlos Aznarán <caznaranl@uni.pe>
+_base=PlanetarySystemStacker
+pkgname=python-planetary-system-stacker-git
+pkgver=0.8.31.r28.g83adfe6
+pkgrel=1
+pkgdesc="Produce a sharp image of a planetary system object"
+arch=(x86_64)
+url="https://github.com/Rolf-Hempel/${_base}"
+license=(GPL3)
+depends=(python-matplotlib python-psutil python-pyqt5 python-astropy python-scikit-image python-opencv)
+makedepends=(python-setuptools python-wheel git)
+source=(git+${url}.git)
+sha512sums=('SKIP')
+
+pkgver() {
+  cd ${_base}
+  git describe --long --tags | sed 's/^V//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+package() {
+  cd ${_base}
+  python setup.py sdist
+  python setup_linux.py bdist_wheel --plat-name linux_armv7l
+}

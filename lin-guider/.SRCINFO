@@ -1,0 +1,11 @@
+pkgbase = lin-guider
+	pkgdesc = Sstronomical autoguiding program
+	pkgver = 5.0.1
+	pkgrel = 1
+	url = https://sourceforge.net/projects/linguider
+	arch = x86_64
+	license = GPL3
+	source = https://altushost-swe.dl.sourceforge.net/project/linguider/5.0.1/lin_guider-5.0.1.tar.bz2
+	sha512sums = c06c427c999f31136bd285413685d6f8781f458aa1269929feb3b529d8c7c5a94c4821ed61342da761c3f78981f7f0cfe5a903a6001d13e5e736850308b20098
+
+pkgname = lin-guider

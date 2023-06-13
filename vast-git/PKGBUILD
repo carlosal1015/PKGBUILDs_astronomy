@@ -1,19 +1,28 @@
-pkgname="vast-git"
-pkgver=1.0.0
+# Maintainer: Yuriy Ivanov <yuriy.ivanov.spb@gmail.com>
+# Contributor: Carlos Aznarán <caznaranl@uni.pe>
+_base=vast
+pkgname=${_base}-git
+pkgver=1.0rc86.r78.g89b94e5
 pkgrel=1
 pkgdesc="software tool for finding variable objects on a series of astronomical images"
-arch=("x86_64")
-url='http://scan.sai.msu.ru/vast'
-license=('GPL3')
-makedepends=('git' 'bc' 'gcc-fortran')
-source=("$pkgname::git+https://github.com/kirxkirx/vast.git")
-sha256sums=('SKIP')
+arch=(x86_64)
+url="https://scan.sai.msu.ru/${_base}"
+license=(GPL3)
+makedepends=(bc gcc-fortran git)
+source=(git+https://github.com/kirxkirx/${_base}.git)
+sha512sums=('SKIP')
+
+pkgver() {
+  cd ${_base}
+  git describe --long --tags --abbrev=7 | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
 
 build() {
-    cd "$srcdir/vast-git"
-    make
+  cd ${_base}
+  make
 }
 
 package() {
   install -C build --destdir="$pkgdir"
+  install -Dm 644 ${_base}-${pkgver}-source/COPYING -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }

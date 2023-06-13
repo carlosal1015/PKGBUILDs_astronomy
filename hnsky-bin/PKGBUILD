@@ -1,13 +1,16 @@
-pkgname="hnsky-bin"
-pkgver=1.0.0
+# Maintainer: Yuriy Ivanov <yuriy.ivanov.spb@gmail.com>
+# Contributor: Carlos Aznarán <caznaranl@uni.pe>
+_base=hnsky
+pkgname=${_base}-bin
+pkgver=0
 pkgrel=1
-pkgdesc="Semi professional free planetarium program"
-arch=("x86_64")
-url='https://sourceforge.net/projects/hnsky/'
-license=('GPL3')
-source=("https://altushost-swe.dl.sourceforge.net/project/hnsky/linux_installer/${pkgname}_amd64.tar.gz")
-sha256sums=('f4b0eff6fe43fe59bce3c3f33bf0cb03017ec20f7b19e914dc6c920b8877e080')
+pkgdesc="Hallo Northern Sky planetarium program"
+arch=(x86_64)
+url="https://sourceforge.net/projects/${_base}"
+license=(GPL3)
+source=(https://altushost-swe.dl.sourceforge.net/project/hnsky/linux_installer/${_base}_amd64.tar.gz)
+sha512sums=('a3e40fb1b48e9502a4c4edf434a23bd6056c8ef1a65235d8c5cdfc47bfa7ffb489f19c26f3359e874d582f9a461116d0c05a637487a6b6a0ac49a69709714cb0')
 
 package() {
-	tar -xf ${pkgname}_amd64.tar.gz "$pkgdir"
+  tar -xf ${_base}_amd64.tar.gz "$pkgdir"
 }

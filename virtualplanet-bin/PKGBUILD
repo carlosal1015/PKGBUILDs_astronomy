@@ -1,15 +1,17 @@
-pkgname="virtualplanet-bin"
+# Maintainer: Yuriy Ivanov <yuriy.ivanov.spb@gmail.com>
+# Contributor: Carlos Aznarán <caznaranl@uni.pe>
+_base=virtualplanet
+pkgname=${_base}-bin
 pkgver=2.0
 pkgrel=1
-pkgdesc="Allow you to visualize any planet aspect at any time. Include extended feature database and textur"
-arch=("x86_64")
-url='http://www.ap-i.net/avp/en/download'
-license=('GPL2')
+pkgdesc="Allow you to visualize any planet aspect at any time"
+arch=(x86_64)
+url="https://www.ap-i.net/avp"
+license=(GPL2)
 makedepends=()
-source=("https://master.dl.sourceforge.net/project/virtualplanet/2-Linux/2.0/software/tar/virtualplanet-${pkgver}-linux_x86_64.tgz")
-sha256sums=('e53d275d4eb381f877847e6a50c101a6bd5bc9cf51386d3edd831900b33052ca')
-
+source=(https://master.dl.sourceforge.net/project/${_base}/2-Linux/2.0/software/tar/${_base}-${pkgver}-linux_x86_64.tgz)
+sha512sums=('94dedbea18831dde29839efa688aee6ad9c431b0c46e5a67bb95131826234e46ea5392f3bdc493174a05e15a9a408bf9cef2a5cc94465afc5de852cacb97a9bf')
 
 package() {
-    tar zxvf virtualplanet-${pkgver}-linux_x86_64.tgz
+  tar zxvf ${_base}-${pkgver}-linux_x86_64.tgz
 }

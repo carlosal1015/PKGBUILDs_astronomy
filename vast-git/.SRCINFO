@@ -1,0 +1,14 @@
+pkgbase = vast-git
+	pkgdesc = software tool for finding variable objects on a series of astronomical images
+	pkgver = 1.0rc86.r78.g89b94e5
+	pkgrel = 1
+	url = https://scan.sai.msu.ru/vast
+	arch = x86_64
+	license = GPL3
+	makedepends = bc
+	makedepends = gcc-fortran
+	makedepends = git
+	source = git+https://github.com/kirxkirx/vast.git
+	sha512sums = SKIP
+
+pkgname = vast-git

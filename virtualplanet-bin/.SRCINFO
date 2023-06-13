@@ -1,0 +1,11 @@
+pkgbase = virtualplanet-bin
+	pkgdesc = Allow you to visualize any planet aspect at any time
+	pkgver = 2.0
+	pkgrel = 1
+	url = https://www.ap-i.net/avp
+	arch = x86_64
+	license = GPL2
+	source = https://master.dl.sourceforge.net/project/virtualplanet/2-Linux/2.0/software/tar/virtualplanet-2.0-linux_x86_64.tgz
+	sha512sums = 94dedbea18831dde29839efa688aee6ad9c431b0c46e5a67bb95131826234e46ea5392f3bdc493174a05e15a9a408bf9cef2a5cc94465afc5de852cacb97a9bf
+
+pkgname = virtualplanet-bin

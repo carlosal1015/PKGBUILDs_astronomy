@@ -1,0 +1,21 @@
+# Maintainer: Yuriy Ivanov <yuriy.ivanov.spb@gmail.com>
+# Contributor: Carlos Aznarán <caznaranl@uni.pe>
+_base=lin_guider
+pkgname=${_base/_/-}
+pkgver=5.0.1
+pkgrel=1
+pkgdesc="Sstronomical autoguiding program"
+arch=(x86_64)
+url="https://sourceforge.net/projects/${_base/_/}"
+license=(GPL3)
+source=(https://altushost-swe.dl.sourceforge.net/project/${_base/_/}/${pkgver}/${_base}-${pkgver}.tar.bz2)
+sha512sums=('c06c427c999f31136bd285413685d6f8781f458aa1269929feb3b529d8c7c5a94c4821ed61342da761c3f78981f7f0cfe5a903a6001d13e5e736850308b20098')
+
+build() {
+  cd ${_base}_pack/${_base}
+  ./build.sh
+}
+
+package() {
+  install -d $pkgdir/{opt/$pkgname,usr/bin}
+}

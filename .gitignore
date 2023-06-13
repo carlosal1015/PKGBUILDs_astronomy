@@ -1,1 +1,8 @@
 *.zip
+C-Munipack-*-source
+*.tar.gz
+*.tar.bz2
+opt
+usr
+*.sh
+*.tgz
